@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Diary | Helia 🎀</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #fff0f4;
+    color: #925b70;
+    font-family: Vazirmatn, Tahoma, sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 35px 15px 15px;
+}
+
+header h1 {
+    color: #d77b9e;
+    font-size: 29px;
+    margin: 10px 0;
+}
+
+.subtitle {
+    color: #b58a9b;
+    font-size: 13px;
+}
+
+.container {
+    width: 92%;
+    max-width: 520px;
+    margin: 15px auto 40px;
+}
+
+.paper {
+    background: #fffaf7;
+    border: 1px solid #f6dbe3;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 25px #dba9b633;
+    text-align: center;
+}
+
+.bow {
+    font-size: 48px;
+}
+
+h2 {
+    color: #d77b9e;
+}
+
+p {
+    line-height: 2.2;
+}
+
+button {
+    background: #e99ab6;
+    color: white;
+    border: none;
+    padding: 13px 24px;
+    border-radius: 25px;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: .3s;
+}
+
+button:hover {
+    background: #d8799d;
+    transform: translateY(-3px);
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+    animation: appear .6s ease;
+}
+
+.envelope {
+    font-size: 100px;
+    cursor: pointer;
+    animation: float 2s infinite;
+}
+
+.polaroids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+    margin-top: 25px;
+}
+
+.polaroid {
+    background: white;
+    padding: 10px 10px 20px;
+    box-shadow: 0 5px 15px #b98b9c44;
+    transform: rotate(-3deg);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.04);
+}
+
+.photo {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.polaroid p {
+    font-size: 12px;
+    margin: 10px 0 0;
+}
+
+.hidden-text {
+    display: none;
+    background: #fff0f6;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.note {
+    background: #fff0c9;
+    padding: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transform: rotate(-1deg);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #bd8a9d;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: hearts 8s linear forwards;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes hearts {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width:380px) {
+    .photo {
+        height: 160px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div style="font-size:32px">🎀 🌷 💌</div>
+    <h1>A Little Diary</h1>
+    <div class="subtitle">a tiny corner of happiness ♡</div>
+</header>
+
+<div class="container">
+
+    <!-- صفحه اول -->
+
+    <section class="paper page active" id="page1">
+
+        <div class="bow">🧸</div>
+
+        <h2>سلام هلیا جان! 💗</h2>
+
+        <p>
+            یه دفتر کوچولوی دیجیتالی برات درست کردم.
+            <br>
+            امیدوارم از دیدنش خوشت بیاد!
+        </p>
+
+        <div class="envelope" onclick="go(2)">
+            💌
+        </div>
+
+        <p>برای باز کردن نامه روی پاکت کلیک کن</p>
+
+    </section>
+
+
+    <!-- صفحه دوم -->
+
+    <section class="paper page" id="page2">
+
+        <div class="bow">🌸</div>
+
+        <h2>یه نامه کوچولو...</h2>
+
+        <p>
+            می‌دونی بعضی آدما هستن که
+            حتی یه مکالمه ساده باهاشون
+            می‌تونه روز آدم رو بهتر کنه؟
+        </p>
+
+        <p>
+            گاهی قشنگ‌ترین اتفاق‌ها
+            از ساده‌ترین آشنایی‌ها شروع می‌شن.
+        </p>
+
+        <div style="font-size:40px">🦢</div>
+<button onclick="go(3)">
+            بریم صفحه بعد 🎀
+        </button>
+
+    </section>
+
+
+    <!-- صفحه سوم: عکس های هلیا -->
+
+    <section class="paper page" id="page3">
+
+        <div class="bow">📸</div>
+
+        <h2>Little Memories</h2>
+
+        <p>
+            چند تا قاب کوچولو...
+            <br>
+            روی عکس‌ها کلیک کن! 💗
+        </p>
+
+        <div class="polaroids">
+
+            <div class="polaroid" onclick="reveal(1)">
+
+                <img
+                    class="photo"
+                    src="photo1.jpeg"
+                    alt="عکس اول هلیا"
+                >
+
+                <p>Little happiness 🌷</p>
+
+                <div class="hidden-text" id="m1">
+                    بعضی تصویرها، بی‌دلیل حال آدم رو خوب می‌کنن.
+                </div>
+
+            </div>
+
+
+            <div class="polaroid" onclick="reveal(2)">
+
+                <img
+                    class="photo"
+                    src="photo2.jpeg"
+                    alt="عکس دوم هلیا"
+                >
+
+                <p>Sweet moments 🌹</p>
+
+                <div class="hidden-text" id="m2">
+                    بعضی آشنایی‌ها واقعاً قشنگن.
+                </div>
+
+            </div>
+
+        </div>
+
+        <button onclick="go(4)">
+            یه صفحه دیگه مونده 🌙
+        </button>
+
+    </section>
+
+
+    <!-- صفحه چهارم -->
+
+    <section class="paper page" id="page4">
+
+        <div class="bow">🌙</div>
+
+        <h2>Before you go...</h2>
+
+        <div class="note" onclick="reveal(3)">
+
+            ✨ یه یادداشت کوچولو برای تو
+
+            <div class="hidden-text" id="m3">
+
+                امیدوارم همیشه آدمایی دور و برت باشن
+                که باعث بشن لبخند بزنی.
+
+                <br>
+
+                راستی، امیدوارم منم گاهی
+                یکی از اون آدما باشم! 💗
+
+            </div>
+
+        </div>
+
+        <p>
+            ممنون که چند دقیقه از وقتت رو
+            به این دفتر کوچولو دادی.
+        </p>
+
+        <div style="font-size:40px">
+            🎀 🐰 🌷
+        </div>
+
+        <button onclick="go(1)">
+            از اول ببینیم
+        </button>
+
+    </section>
+
+</div>
+
+
+<footer>
+    made with a little bit of love ♡
+    <br>
+    for Helia 🎀
+</footer>
+
+
+<script>
+
+// آمار تعاملات همین مرورگر
+
+let stats = JSON.parse(
+    localStorage.getItem("diaryStats") ||
+    '{"visits":0,"clicks":0,"pages":[],"cards":[]}'
+);
+
+stats.visits++;
+
+saveStats();
+
+function saveStats() {
+
+    localStorage.setItem(
+        "diaryStats",
+        JSON.stringify(stats)
+    );
+
+}
+
+
+// تغییر صفحات
+
+function go(number) {
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+
+    document.getElementById("page" + number)
+        .classList.add("active");
+
+    stats.clicks++;
+
+    stats.pages.push(number);
+
+    saveStats();
+
+    window.scrollTo(0, 0);
+
+}
+
+
+// نمایش پیام های مخفی
+
+function reveal(number) {
+
+    let item = document.getElementById("m" + number);
+
+    if(item.style.display === "block") {
+
+        item.style.display = "none";
+
+    } else {
+
+        item.style.display = "block";
+
+    }
+
+    stats.clicks++;
+
+    if(!stats.cards.includes(number)) {
+
+        stats.cards.push(number);
+
+    }
+
+    saveStats();
+
+}
+
+
+// قلب های متحرک
+
+function createHeart() {
+
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    let emojis = ["💗","💕","🌸","✨","🎀"];
+
+    heart.innerText =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize = "20px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+
+}
+
+setInterval(createHeart, 900);
+
+</script>
+
+</body>
+</html>
